@@ -9,3 +9,10 @@ print(x)
 y = x
 x['key'] = 'value'
 print(y)
+
+b = {}.fromkeys(['name', 'age'])
+print(b)
+
+d = {}
+print(d.get('name'))
+print(d.get('name', 'N/A'))
