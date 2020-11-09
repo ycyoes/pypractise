@@ -24,5 +24,4 @@ print(list(flatten(['foo', ['bar', ['baz']]])))
 另外，即便是对UserString来说，也无法检查其类型是否为str。
 '''
 
-
 print(list(flatten([1, 2])))
