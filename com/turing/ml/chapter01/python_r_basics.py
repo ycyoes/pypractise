@@ -72,6 +72,49 @@ class Failure():
         except:
             return Failure(None, True)
 
+from operator import neg
+x = '1'
+y = Failure(x) | int | neg | str
+print(y)
+
+x = 'hahaha'
+y = Failure(x) | int | neg | str
+print(y)
+
+class MyClass(object):
+    def __init__(self, x):
+        self.x = x
+    def __del__(self):  #Warning: Perhaps a very bad idea!
+        print("I am gone")
+
+my_class = MyClass(1)
+del my_class
+
+# my_class
+
+my_class_a = MyClass(1)
+my_class_b = my_class_a
+my_class_c = MyClass(1)
+
+# Note that this is a reference to the class, therefore, they are pointing to the same thing which is why it changes.
+my_class_b.x = 2
+print(my_class_a.x)
+
+print(my_class_b == my_class_a)
+
+my_class_a = MyClass(1)
+my_class_c = MyClass(1)
+print(my_class_a == my_class_c)
+
+from copy import deepcopy
+my_class_a = MyClass(1)
+my_class_b  =deepcopy(my_class_a)
+print(my_class_b == my_class_a)
+
+my_class_b.x = 2
+print(my_class_a.x)
+
+
 
 
 
