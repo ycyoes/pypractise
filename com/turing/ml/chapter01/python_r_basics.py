@@ -129,8 +129,25 @@ ghost_bus.pick("A Ghost")
 print(ghost_bus.passengers)
 # What goes wrong here? Note that self.passengers is a reference to passengers, and passengers is a refernece to [] (which is global). Note when you mutate self.passengers, you are mutating [] as well. So please use None instead.
 
+a = []
+b= [1,a,'2']
+b.append(5)
+b.extend([1,2])
+print(b)
 
+matrix  = [[1,2],[3,4],[5,6],[7,8]]
+print(matrix)
+tranpose =[[row[i] for row in matrix] for i in range(2)]
+print(tranpose)
 
+set_a = {1,2,3}
+set_b = {3,4,5}
+print(set_a|set_b)
+print(set_a - set_b)
+print(set_b - set_a)
+print(set_a.union(set_b))
+print(set_a.intersection(set_b))
+print(set_a^set_b)
 
 
 
