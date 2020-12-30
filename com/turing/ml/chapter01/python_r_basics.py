@@ -114,10 +114,20 @@ print(my_class_b == my_class_a)
 my_class_b.x = 2
 print(my_class_a.x)
 
+# The Ghost Bus Incidence
+class GhostBus:
+    def __init__(self, passengers=[]):
+        self.passengers = passengers
+    def pick(self, name):
+        self.passengers.append(name)
+    def drop(self, name):
+        self.passengers.remove(name)
 
-
-
-
+#Run this several times
+ghost_bus = GhostBus()
+ghost_bus.pick("A Ghost")
+print(ghost_bus.passengers)
+# What goes wrong here? Note that self.passengers is a reference to passengers, and passengers is a refernece to [] (which is global). Note when you mutate self.passengers, you are mutating [] as well. So please use None instead.
 
 
 
