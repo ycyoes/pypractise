@@ -149,5 +149,51 @@ print(set_a.union(set_b))
 print(set_a.intersection(set_b))
 print(set_a^set_b)
 
+keys = ['a','b','c']
+values = [1,2,3]
+dict_from_zip = dict(zip(keys, values))
+print(dict_from_zip)
+
+# Common Data Structure: NamedTuple
+from collections import namedtuple
+employee = namedtuple('Employee', ['age', 'place', 'education'])
+tom = employee(age=10, place='beijing', education='none')
+print(tom)
+
+from dataclasses import dataclass, field
+from typing import Optional
+
+@dataclass
+class MyDataClass:
+    name: str = field(
+        default='tom',
+        metadata={'help':"Name of the person"}
+    )
+
+    age: Optional[int] = field(
+        default=None,
+        metadata={'help': "Age of the person. Optional."}
+    )
+
+    vip: int = field(
+        default=100,
+        metadata={'help': "Some very important field."}
+    )
+
+    def __post_init__(self):    #This function will help you to handle illegal argument.
+        if self.vip <= 0:
+            raise Exception("That important thing has to be larger than 0")
+
+    @property
+    def age_type(self):
+        if self.age >= 100:
+            return 'You are old'
+        else:
+            return 'You are still young'
+
+my_data_class = MyDataClass(name='jerry', age=20)
+print(my_data_class)
+print(my_data_class.age)
+print(my_data_class.age_type)
 
 
