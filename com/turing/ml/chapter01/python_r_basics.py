@@ -241,6 +241,43 @@ from functools import reduce
 result = reduce(lambda x, y: x+y, filter(lambda x: x > 3, map(lambda x: x+1, my_input)))
 print(result)
 
+# Decorators
+def my_decorator(func):
+    def my_decorator_impl(x):
+        result = x if x > 0 else 0
+        return func(result)
+    return my_decorator_impl
+
+@my_decorator
+def myfunc(x):
+    return np.sqrt(x)
+new_func = my_decorator(myfunc)
+print(myfunc(-1))
+
+from functools import partial
+def decor_impl(fun, argument):
+    def impl(x):
+        result = x if x > argument else argument
+        print('result: ', result, ' fun(result): ', fun(result))
+        return fun(result)
+    return impl
+
+
+decor = partial(decor_impl, argument = 2)
+
+
+@decor
+def myfunc(x):
+    return np.sqrt(x)
+
+
+myfunc(-1)
+
+
+
+
+
+
 
 
 
