@@ -196,4 +196,51 @@ print(my_data_class)
 print(my_data_class.age)
 print(my_data_class.age_type)
 
+class Vector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+
+class Vector:
+    def __init__(self, x=0, y=0):
+        self.x = x
+        self.y = y
+    def __repr__(self):
+        return 'Vector(%r,%r)' % (self.x, self.y)
+    def __str__(self):
+        return 'Vector(%r,%r)' % (self.x, self.y)
+    def __add__(self, other):
+        x = self.x + other.x
+        y = self.y + other.y
+        return Vector(x, y)
+    def __sub__(self, other):
+        x = self.x - other.x
+        y = self.y - other.y
+        return Vector(x, y)
+    def __mul__(self, scalar):
+        return Vector(self.x * scalar, self.y * scalar)
+
+
+v = Vector(1,2)
+print(str(v))
+print(v)
+
+v1 = Vector(0, 0)
+v2 = Vector(1, 2)
+v1 *= 2
+print('----------magic-function----------')
+print(v1)
+
+# Common Higher Order Function
+my_input = [1,2,3,4,5,6,6]
+result = map(lambda x: x+1, my_input)
+print(result)   #map is lazy
+print(list(result))
+
+from functools import reduce
+result = reduce(lambda x, y: x+y, filter(lambda x: x > 3, map(lambda x: x+1, my_input)))
+print(result)
+
+
+
 
