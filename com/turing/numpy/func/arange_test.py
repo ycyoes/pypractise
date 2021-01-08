@@ -44,7 +44,14 @@ y = x[:, 0]
 y[:] = 1
 print(x) # x is changed as well
 
-
+'''
+To prevent unwanted reference, use copy methods instead.
+Note that this will be a common pattern!
+'''
+z = x[0,:].copy()
+z[:] = 10 #Nothing should change
+print(x)
+print(z)
 
 
 
