@@ -1,10 +1,6 @@
 import numpy as np
 import pandas as pd
 
-x = np.random.randint(10, size=(5000, 1))
-print(x)
-print(x.shape)
-
 def target_mean_v1(data, y_name, x_name):
     result = np.zeros(data.shape[0])
     for i in range(data.shape[0]):
@@ -19,6 +15,7 @@ def main():
     result_1 = target_mean_v1(data, 'y', 'x')
     # result_2 = target_mean_v2(data, 'y', 'x')
     print(result_1)
+    print(result_1.shape)
 
 
 if __name__ == '__main__':
