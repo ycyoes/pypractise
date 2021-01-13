@@ -33,6 +33,7 @@ df = pd.DataFrame({
     'y': [1,1,1,1,0,1,0,0,0,0]
 })
 
+
 df['x_0'] = calc_smooth_mean(df, by='x_0', on='y', m=10)
 df['x_1'] = calc_smooth_mean(df, by='x_1', on='y', m=10)
 
