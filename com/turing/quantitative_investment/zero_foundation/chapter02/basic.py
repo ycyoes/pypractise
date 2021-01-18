@@ -13,6 +13,14 @@ print("good good study, \
 dir = dir(__builtins__)
 print(dir)
 
+print("--------tuple--------")
+val = 1,2,3,4
+print(type(val))
+print(val)
+
+a,b,c,d=val
+print(a,b,c,d)
+print(type(a))
 
 
 
