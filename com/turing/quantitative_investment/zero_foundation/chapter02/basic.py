@@ -22,7 +22,15 @@ a,b,c,d=val
 print(a,b,c,d)
 print(type(a))
 
+n = 10
+b = (x**2 for x in range(n) if x % 2 ==0)
+print(b)
+print(type(b))
 
+print(next(b))
+print(next(b))
+print(next(b))
+print(b.__next__())
 
 
 
