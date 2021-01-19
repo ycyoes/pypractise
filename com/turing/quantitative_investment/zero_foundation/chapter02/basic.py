@@ -32,6 +32,11 @@ print(next(b))
 print(next(b))
 print(b.__next__())
 
+c = (x**2 for x in range(n) if x % 2 ==0)
+#Iterate b through Python Syntactic Sugar
+for num in c:
+    print(num)
+
 
 
 
