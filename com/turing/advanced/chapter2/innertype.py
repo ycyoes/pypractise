@@ -41,3 +41,23 @@ print(first, inner, last)
 # 嵌套解包
 (a, b), (c, d) = (1, 2), (3, 4)
 print(a, b, c, d)
+
+# 字典
+# 视图对象可以动态查看字典的内容，因此每次字典发生变化时，视图都会相应改变
+words = {'foo':'bar', 'fizz':'bazz'}
+items = words.items()
+words['spam'] = 'eggs'
+print(items)
+
+# 在某些情况下，字典的键是连续的，对应的散列值也是连续值（例如整数），那么由于字典的内部实现，元素的顺序可能和添加顺序相同：
+print({number: None for number in range(5)}.keys())
+
+# 字典元素的顺序既与对象的散列方法无关，也与元素的添加顺序无关。但我们也不能完全信赖这一说法，因为在不同的Python实现中可能会有所不同。
+print({str(number): None for number in range(5)}.keys())
+print({str(number): None for number in reversed(range(5))}.keys())
+
+from collections import OrderedDict
+dict = OrderedDict((str(number),None) for number in range(5)).keys()
+print(dict)
+
+
