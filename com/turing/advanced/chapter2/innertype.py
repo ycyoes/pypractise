@@ -60,4 +60,7 @@ from collections import OrderedDict
 dict = OrderedDict((str(number),None) for number in range(5)).keys()
 print(dict)
 
+# set
+print(set([frozenset([1,2,3]), frozenset([2,3,4])]))
+
 
