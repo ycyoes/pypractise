@@ -18,3 +18,32 @@ class CountDown:
         """Return the iterator itself."""
         return self
 
+for element in CountDown(4):
+    print(element)
+
+
+# yield语句
+print('-----------yield------------')
+def fibonacci():
+    a, b = 0, 1
+    while True:
+        yield b
+        a, b = b, a + b
+
+fib = fibonacci()
+print(next(fib))
+print(next(fib))
+print(next(fib))
+
+print([next(fib) for i in range(10)])
+
+
+
+
+
+
+
+
+
+
+
