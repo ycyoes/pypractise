@@ -30,8 +30,14 @@ for item in zip(*zip([1,2,3], [4, 5, 6])):
 first, second, third = "foo", "bar", 100
 print(first, second, third)
 
+# 带星号的表达式获取单个变量中的多个元素，只要它的解释没有歧义即可。还可以对嵌套序列进行解包
+first, second, *rest = 0, 1, 2, 3
+print(first, second, rest)
 
+# 带星号的表达式可以获取序列的中间部分
+first, *inner, last = 0, 1, 2, 3
+print(first, inner, last)
 
-
-
-
+# 嵌套解包
+(a, b), (c, d) = (1, 2), (3, 4)
+print(a, b, c, d)
