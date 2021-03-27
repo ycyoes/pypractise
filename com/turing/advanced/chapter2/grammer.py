@@ -67,11 +67,23 @@ def psychologist():
             elif 'bad' in answer:
                 print("Don't be so negative")
 
+
+print("------psychologist----------")
+
 free = psychologist()
-print(next(free))
+next(free)
 
+free.send('I feel bad.')
+free.send("Why I shouldn't ?")
+free.send("ok then i should find what is good for me")
 
-
+"""
+send的作用和next类似，但会将函数定义内部传入的值变成yield的返回值。因此，这个函数可以根据客户端代码来改变自身行为。
+为完成这一行为，还添加了另外两个函数：throw和close。它们将向生成器抛出错误。
+• throw：允许客户端代码发送要抛出的任何类型的异常。
+• close：作用相同，但会引发特定的异常——GeneratorExit。
+在这种情况下，生成器函数必须再次引发GeneratorExit或StopIteration。
+"""
 
 
 
