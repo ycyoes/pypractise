@@ -93,7 +93,15 @@ class WithoutDecorators:
         print("this is class method")
     some_class_method = classmethod(some_class_method)
 
-class With
+class WithDecorators:
+    @staticmethod
+    def some_static_method():
+        print("this is static method")
+
+    @classmethod
+    def some_class_method(cls):
+        print("this is class method")
+
 
 
 
