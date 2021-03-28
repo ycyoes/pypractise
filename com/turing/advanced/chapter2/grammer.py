@@ -85,6 +85,15 @@ send的作用和next类似，但会将函数定义内部传入的值变成yield�
 在这种情况下，生成器函数必须再次引发GeneratorExit或StopIteration。
 """
 
+class WithoutDecorators:
+    def some_static_method():
+        print("this is static method")
+    some_static_method = staticmethod(some_static_method)
+    def some_class_method(cls):
+        print("this is class method")
+    some_class_method = classmethod(some_class_method)
+
+class With
 
 
 
