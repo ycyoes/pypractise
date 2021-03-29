@@ -121,3 +121,38 @@ class DecoratorAsClass:
         #在调用函数之后，做点什么，并返回结果
         return result
 
+#参数化装饰器
+def repeat(number=3):
+    """多次重复执行装饰函数。
+
+    返回最后一次原始函数调用的值作为结果
+    :param number: 重复次数，默认值是3
+    """
+
+    def actual_decorator(function):
+        def wrapper(*args, **kwargs):
+            result = None
+            for _ in range(number):
+                result = function(*args, **kwargs)
+            return result
+        return wrapper
+    return actual_decorator
+
+@repeat(2)
+def foo():
+    print("foo")
+
+foo()
+
+# 即使参数化装饰器的参数有默认值，但名字后面也必须加括号
+@repeat()
+def bar():
+    print("bar")
+
+bar()
+
+
+
+
+
+
