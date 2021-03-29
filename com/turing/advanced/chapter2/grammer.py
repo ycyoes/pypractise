@@ -111,4 +111,13 @@ def mydecorator(function):
     #返回wrapped作为装饰函数
     return wrapped
 
+class DecoratorAsClass:
+    def __init__(self, function):
+        self.function = function
+
+    def __call__(self, *args, **kwargs):
+        #在调用原始函数之前，做点什么
+        result = self.function(*args, **kwargs)
+        #在调用函数之后，做点什么，并返回结果
+        return result
 
