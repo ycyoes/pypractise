@@ -102,6 +102,13 @@ class WithDecorators:
     def some_class_method(cls):
         print("this is class method")
 
-
+def mydecorator(function):
+    def wrapped(*args, **kwargs):
+        #在调用原始函数之前，做点什么
+        result = function(*args, **kwargs)
+        #在函数调用之后，做点什么，并返回结果
+        return result
+    #返回wrapped作为装饰函数
+    return wrapped
 
 
