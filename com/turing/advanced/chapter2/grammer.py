@@ -280,7 +280,6 @@ def memoize(duration=10):
 def very_very_very_complex_stuff(a, b):
     return a + b
 
-
 very_very_very_complex_stuff(2, 2)
 
 
