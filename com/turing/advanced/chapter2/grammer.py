@@ -252,15 +252,17 @@ def compute_key(function, args, kw):
     key = pickle.dumps((function.__name__, args, kw))
     return hashlib.sha1(key).hexdigest()
 
-
+"""
 def memoize(duration=10):
+    print('---------test----------')
     def _memoize(function):
         # print('----------function-----------\n', function)
         def __memoize(*args, **kw):
             key = compute_key(function, args, kw)
 
             # 是否已经拥有它了？
-            if(key in cache and not is_obsolete(cache[key], duration)):
+            if(key in cache and
+                    not is_obsolete(cache[key], duration)):
                 print('we got a winner')
                 return cache[key]['value']
             # 计算
@@ -273,8 +275,8 @@ def memoize(duration=10):
                 return result
             return __memoize
         return _memoize
-
-@memoize
+"""
+# @memoize()
 def very_very_very_complex_stuff(a, b):
     return a + b
 
