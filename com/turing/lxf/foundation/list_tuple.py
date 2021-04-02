@@ -35,3 +35,14 @@ for i in range(6):
     if i == 4:
         continue
     print(i)
+
+for i in range(6):
+    print(i)
+else:
+    print("ok")
+
+
+
+
+
+
