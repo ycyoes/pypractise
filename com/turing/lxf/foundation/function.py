@@ -25,4 +25,31 @@ print(vol)
 
 print("%s, %s, %d" % ("你好", "中国", 2018))
 
+def printf(format, *arg):
+    print(format%arg)
+
+printf("年后")
+
+printf("%s,%s", "你好", "中国")
+printf("%s, %s, %d" % ("你好", "中国", 2018))
+
+def getchange(*arg):
+    print(arg)
+
+getchange(1,2,3)
+
+def addall(*arg):
+    total = 0
+    for arg_one in arg:
+        total += arg_one
+    return total
+
+aa = addall(1,2,3,4)
+print(aa)
+
+
+
+
+
+
 
