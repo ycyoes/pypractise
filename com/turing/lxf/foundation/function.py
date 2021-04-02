@@ -47,6 +47,14 @@ def addall(*arg):
 aa = addall(1,2,3,4)
 print(aa)
 
+# *arg、**argv只能够放到参数的最后，并且*arg必须放到**argv之前，可变参数只能放到固定参数后面
+def funexe(keyparam, choice=1, *arg, **keywords):
+    print(keyparam, choice,arg,keywords)
+
+funexe('a', 'b', 'c', 'e')
+funexe('a', 'b', 'c', 'e', three=3)
+
+
 
 
 
