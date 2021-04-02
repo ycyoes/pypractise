@@ -8,3 +8,21 @@ def transchar(para_str):
         return False
 
 print(type('str'))
+
+print(transchar('abdbi'))
+
+def getvolume(len, width, height):
+    return len * width * height
+
+vol = getvolume(2, 12, 13)
+print(vol)
+
+def getvolume(len = 0, width = 0, height = 0):
+    return len * width * height
+
+vol = getvolume(12, 13)
+print(vol)
+
+print("%s, %s, %d" % ("你好", "中国", 2018))
+
+
