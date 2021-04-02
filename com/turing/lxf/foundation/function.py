@@ -54,9 +54,23 @@ def funexe(keyparam, choice=1, *arg, **keywords):
 funexe('a', 'b', 'c', 'e')
 funexe('a', 'b', 'c', 'e', three=3)
 
+def addtwo(a, b):
+    return a + b
+addtwo(1,2)
 
+add1=addtwo
+add1(3,5)
 
+def test2(fun, a, b):
+    return fun(a,b)
 
+test2(add1,3,4)
+
+def addtwo(a,b):
+    a + b
+
+# 对一个函数，需要有返回值时，可以使用return语句。若不使用return语句，则返回为None类型
+print(addtwo(2,3))
 
 
 
