@@ -72,6 +72,13 @@ def addtwo(a,b):
 # 对一个函数，需要有返回值时，可以使用return语句。若不使用return语句，则返回为None类型
 print(addtwo(2,3))
 
+class Student():
+    def __init__(self, score1, score2, score3):
+        self.scores = [score1, score2, score3]
+
+stu_1 = Student(80, 90, 85)
+print(stu_1.scores)
+
 
 
 
