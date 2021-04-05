@@ -104,6 +104,8 @@ print(primes)
 mid = int(pow(1,0.5)+1)
 print('mid: %s' % mid)
 
+from functools import reduce
+print(reduce(lambda l,y: not 0 in map(lambda x:y % x, l) and l+[y] or l, range(2, 100), []))
 
 
 
