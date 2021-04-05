@@ -107,7 +107,30 @@ print('mid: %s' % mid)
 from functools import reduce
 print(reduce(lambda l,y: not 0 in map(lambda x:y % x, l) and l+[y] or l, range(2, 100), []))
 
+# 嵌套函数
+def getfun(x,y):
+    def addfun(a,b):
+        return a*b
+    return addfun(x,y)
 
+print(getfun(2,3))
+
+# 函数作用域
+var = []
+def test2():
+    var=[1]
+    var.append(1)
+    return var
+
+print(test2())
+
+print(var)
+
+def test3():
+    var.append(2)
+    return var
+
+print(test3())
 
 
 
