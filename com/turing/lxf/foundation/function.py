@@ -79,6 +79,38 @@ class Student():
 stu_1 = Student(80, 90, 85)
 print(stu_1.scores)
 
+# lambda函数
+b = lambda a, b:a+b
+c = b(1,2)
+print(c)
+
+g = lambda x, y=0, z=0: x+y+z
+d = g(4,5,6)
+print(d)
+
+def isPrime(n):
+    mid = int(pow(n,0.5)+1)
+    for i in range(2,mid):
+        if n % i == 0: return False
+    return True
+
+primes=[]
+
+for i in range(2,100):
+    if isPrime(i): primes += [i]
+
+print(primes)
+
+mid = int(pow(1,0.5)+1)
+print('mid: %s' % mid)
+
+
+
+
+
+
+
+
 
 
 
