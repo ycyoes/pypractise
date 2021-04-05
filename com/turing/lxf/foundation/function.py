@@ -132,6 +132,79 @@ def test3():
 
 print(test3())
 
+#八皇后问题
+# （1）象棋棋盘的数据结构
+chess = [[0 for x in range(8)] for x in range(8)]
+print(chess)
+# （2）安全位置的判断根据象棋棋盘数据结构的设计，凡是元素值为0的都是安全的，凡是元素值不为0的都是不安全的。
+# 可以使用下面的函数来实现这个功能：
+
+def judgedanger(chess,x,y):
+    if chess[x][y] == 0:
+        return True
+    else:
+        return False
+
+# （3）回溯功能的实现
+def setdanger(chess,x,y):
+    for col in range(len(chess)):
+        for row in range(len(chess[0])):
+            if col == x:
+                chess[col][row] +=1
+            elif row == y:
+                chess[col][row] +=1
+            elif col + row == x + y:
+                chess[col][row] += 1
+            elif col - row == x - y:
+                chess[col][row] += 1
+            else:
+                pass
+
+def erasedanger(chess,x,y):
+    for col in range(len(chess)):
+        for row in range(len(chess[0])):
+            if col == x:
+                chess[col][row] -= 1
+            elif row == y:
+                chess[col][row] -= 1
+            elif col + row == x + y:
+                chess[col][row] -= 1
+            elif col - row == x - y:
+                chess[col][row] -= 1
+            else:
+                pass
+
+def judgecol(chess,col):
+    for row in range(len(chess[col])):
+        if judgedanger(chess,col,row):
+            break
+    else:
+        return False
+    return True
+
+def tryqueen(chess,col,flag,result):
+    flag[0]=True
+    if col==8:
+        print("find")
+    else:
+        if judgecol(chess,col):
+            for row in range(len(chess[col])):
+                if judgedanger(chess,col,row):
+                    print("ok"+str(col)+":"+str(row))
+                    setdanger(chess,col,row)
+                    result.append((col,row))
+                    tryqueen(chess,col+1,flag,result)
+                    if flag[0]==False:
+                        erasedanger(chess,col,row)
+                        result.pop()
+                else:
+                    flag[0]=False
+
+
+
+
+
+
 
 
 
