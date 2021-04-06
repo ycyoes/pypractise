@@ -201,11 +201,21 @@ def tryqueen(chess,col,flag,result):
                     flag[0]=False
 
 
+# reduce
+scientists = ({'name':'Alan Turing', 'age': 105, 'gender':'male'},
+              {'name':'Dennis Ritchie', 'age': 76, 'gender':'male'},
+              {'name':'Ada Lovelace', 'age': 202, 'gender':'female'},
+              {'name':'Frances E. Allen', 'age': 84, 'gender':'female'})
 
 
+def reducer(accumulator, value):
+    print('accumulator: ', accumulator, ' value: ', value)
+    sum = accumulator + value['age']
+    return sum
 
 
-
+total_age = reduce(reducer, scientists, 0)
+print(total_age)
 
 
 
